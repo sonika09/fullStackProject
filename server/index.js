@@ -5,7 +5,7 @@ app.get('/', (req,res)=>{
 res.send({bye:"there"})
 })
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT ||5000
 console.log(PORT)
 app.listen(PORT)
 
