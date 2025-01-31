@@ -19,7 +19,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "http://fullstackproject-1-yalc.onrender.com/auth/google/callback",
+      callbackURL: "https://fullstackproject-1-yalc.onrender.com/auth/google/callback",
       proxy:true
     },
     (accessToken, refreshToken, profile, done) => {
