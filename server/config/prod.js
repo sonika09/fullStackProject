@@ -6,7 +6,9 @@
     cookieKey:process.env.COOKIE_KEY,
     redirectURI:process.env.REDIRECT_URI,
     stripePublishableKey:process.env.STRIPE_PUBLISHABLE_KEY,
-    stripeSecretKey:process.env.STRIPE_SECRET_KEY
+    stripeSecretKey:process.env.STRIPE_SECRET_KEY,
+    brevoEmailKey:process.env.BREVO_EMAIL_KEY,
+    redirectDomain:process.env.REDIRECT_DOMAIN
  }
  
  

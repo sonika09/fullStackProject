@@ -17,7 +17,21 @@ module.exports = function (app) {
     })
   );
   app.use(
+    "/api/current_user",
+    createProxyMiddleware({
+      target: "http://localhost:5000",
+      changeOrigin: true,
+    })
+  );
+  app.use(
     "/api/stripe",
+    createProxyMiddleware({
+      target: "http://localhost:5000",
+      changeOrigin: true,
+    })
+  );
+  app.use(
+    "/api/surveys",
     createProxyMiddleware({
       target: "http://localhost:5000",
       changeOrigin: true,
