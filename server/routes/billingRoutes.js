@@ -19,10 +19,8 @@ module.exports = (app) => {
       if (!req.user) {
         return res.status(401).send({ error: "User not authenticated" });
       }
-
       req.user.credits += 5;
       const user = await req.user.save();
-
       res.send(user);
     } catch (error) {
       console.error("Stripe Charge Error:", error);
