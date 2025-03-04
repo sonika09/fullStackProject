@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
-
+import './app.css'
 
 class Header extends Component {
+  state = { menuOpen: false };
+
+  toggleMenu = () => {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  };
+
   renderContent() {
     switch (this.props.auth) {
       case null:
@@ -19,7 +25,12 @@ class Header extends Component {
         return (
           <>
             <Payments />
-            <li style={{margin:"0 10px"}}>Credits : {this.props.auth.credits}</li>
+            <li style={{ margin: "0 10px" }}>
+              Credits: {this.props.auth.credits}
+            </li>
+            <li>
+              <a href="/surveys">SurveyList</a>
+            </li>
             <li>
               <a href="/api/logout">LogOut</a>
             </li>
@@ -35,7 +46,10 @@ class Header extends Component {
           <Link to={this.props.auth ? "/surveys" : "/"} className="brand-logo">
             Emaily
           </Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <span className="menu-toggle" onClick={this.toggleMenu}>
+            ☰
+          </span>
+          <ul id="nav-mobile" className={this.state.menuOpen ? "show" : ""}>
             {this.renderContent()}
           </ul>
         </div>

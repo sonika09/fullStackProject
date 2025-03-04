@@ -1,0 +1,112 @@
+.fixed-action-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed-action-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .btn-floating {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-floating i {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fixed-action-btn {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .btn-floating {
+    width: 45px;
+    height: 45px;
+  }
+
+  .btn-floating i {
+    font-size: 20px;
+  }
+}
+/* for header mobile view */
+/* Navbar Styles */
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #2196f3;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+#nav-mobile {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop View */
+@media (min-width: 601px) {
+  #nav-mobile {
+    display: flex;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .nav-wrapper {
+    padding: 0 10px;
+  }
+
+  #nav-mobile {
+    display: none; /* Hide menu items by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #nav-mobile.show {
+    display: flex; /* Show menu when active */
+  }
+
+  #nav-mobile li {
+    /* padding: 10px; */
+    text-align: center;
+    color:red
+  }
+  #nav-mobile a {
+    /* padding: 10px; */
+    text-align: center;
+    color:red
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+}

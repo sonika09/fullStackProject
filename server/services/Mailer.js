@@ -18,7 +18,7 @@ class EmailService {
     // Configure the email details
     sendSmtpEmail.subject = survey.subject;
     sendSmtpEmail.htmlContent = emailTemplate;
-    sendSmtpEmail.sender = { name: "Emaily", email: "sonikasoni0517@gmail.com" };
+    sendSmtpEmail.sender = { name: "Emaily", email: "no-reply@survey.com" };
     sendSmtpEmail.to = survey.recipients.map((recipient) => ({
       email: recipient.email,
     }));
